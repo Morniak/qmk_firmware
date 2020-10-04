@@ -40,14 +40,11 @@ enum layers {
 #define BR03 KC_LGUI
 #define BR04 KC_SPC
 #define BR05 KC_ENT
-#define BR06 MO(_LOWER)
+#define BR06 KC_BSPC
 #define BR07 MO(_RAISE)
 #define BR08 KC_RALT
 #define BR09 MO(_LOWER)
 #define BR10 KC_ESC
-
-/* Under the screen row */
-#define U1 KC_LSFT
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -59,17 +56,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * | LShift |   A  |   U  |  I   |   E  |   ,  |                              |   C  |   T  |   S  |   R  |   N  |   M    |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |  Tab   |   À  |   Y  |   X  |   .  |   K  |  SPC |LShift|  |LShift| Bspc |   ’  |   Q  |   G  |   H  |   F  |   W    |
+ * |  Tab   |   À  |   Y  |   X  |   .  |   K  |  SPC |CPSLCK|  |LShift| Bspc |   ’  |   Q  |   G  |   H  |   F  |   W    |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | CTRL | Alt  | CMD  | Space| Enter|  | Raise| Raise| RAlt | Lower| ESC  |
+ *                        | CTRL | Alt  | CMD  | Space| Enter|  | Bspc | Raise| RAlt | Lower| ESC  |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_BEPO] = LAYOUT(
-      RESC, BP_B,  BP_EA, BP_P, BP_O,  BP_EG,                         BP_DC, BP_V, BP_D, BP_L, BP_J, BP_Z,
-      LS, BP_A,  BP_U,  BP_I, BP_E,  BP_CO,                         BP_C,  BP_T, BP_S, BP_R, BP_N, BP_M,
-      KC_TAB, BP_AG, BP_Y,  BP_X, BP_DT, BP_K, KC_SPC, U1,    U1,   KC_BSPC, BP_AP, BP_Q, BP_G, BP_H, BP_F, BP_W,
-                          BR01, BR02,  BR03, BR04, BR05,  BR06, BR07, BR08,  BR09, BR10
+      RESC,   BP_B,  BP_EA, BP_P, BP_O,  BP_EG,                                         BP_DC, BP_V, BP_D, BP_L, BP_J, BP_Z,
+      LS,     BP_A,  BP_U,  BP_I, BP_E,  BP_CO,                                         BP_C,  BP_T, BP_S, BP_R, BP_N, BP_M,
+      KC_TAB, BP_AG, BP_Y,  BP_X, BP_DT, BP_K,  KC_SPC, KC_CLCK, /**/ KC_LSFT, KC_BSPC, BP_AP, BP_Q, BP_G, BP_H, BP_F, BP_W,
+                            BR01, BR02,  BR03,  BR04,   BR05,    /**/ BR06,    BR07,    BR08,  BR09, BR10
     ),
 /*
  * Lower Layer: Numbers and symbols ?
