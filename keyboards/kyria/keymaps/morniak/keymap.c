@@ -18,12 +18,12 @@
 
 enum layers {
     _BEPO = 0,
-    _LOWER,
-    _RAISE,
+    _NUM,
+    _MEDIA,
     _ADJUST
 };
 
-#define RESC LT(_RAISE, KC_ESC)
+#define RESC LT(_MEDIA, KC_ESC)
 #define BP_EA BP_E_ACUTE
 #define BP_AG BP_AGRV
 #define BP_EG BP_E_GRAVE
@@ -41,9 +41,9 @@ enum layers {
 #define BR04 KC_SPC
 #define BR05 KC_ENT
 #define BR06 KC_BSPC
-#define BR07 MO(_RAISE)
+#define BR07 MO(_MEDIA)
 #define BR08 KC_RALT
-#define BR09 MO(_LOWER)
+#define BR09 MO(_NUM)
 #define BR10 KC_ESC
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -69,8 +69,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,  BP_AG,   BP_Y,    BP_X,    BP_DT, BP_K,      KC_SPC,  KC_CLCK, /**/  KC_LSFT, KC_BSPC,BP_AP,   BP_Q,    BP_G,    BP_H,    BP_F,    BP_W,
                                  BR01,    BR02,  BR03,      BR04,    BR05,    /**/  BR06,    BR07,   BR08,    BR09,    BR10
     ),
+
 /*
- * Lower Layer: Numbers and symbols ?
+ * Numbers and symbols
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |    $   |  "   |  «   |  »   |  (   |  )   |                              |   @  |   +  |   -  |   /  |   *  |   =    |
@@ -83,14 +84,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
-    [_LOWER] = LAYOUT(
+    [_NUM] = LAYOUT(
       _______, BP_DQUO, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN,                                       BP_AT,   BP_PLUS, BP_MINS, BP_SLASH, BP_ASTR, BP_EQL,
       _______, BP_1,    BP_2,    BP_3,    BP_4,    BP_5,                                          BP_6,    BP_7,    BP_8,    BP_9,     BP_0,    BP_DEGR,
       _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, BP_DOL,  _______,  BP_PERC, BP_GRV,
                                  _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______
     ),
 /*
- * Raise Layer: Media
+ * Media
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
@@ -103,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
-    [_RAISE] = LAYOUT(
+    [_MEDIA] = LAYOUT(
       _______, _______, _______, _______, _______, _______,                                       _______, _______, _______, _______, _______, _______,
       _______, _______, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLU,                                       _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
       _______, _______, _______, _______, KC_MUTE, KC_VOLD, _______, _______,   _______, _______, _______, _______, _______, _______, _______, _______,
@@ -152,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+    return update_tri_layer_state(state, _NUM, _MEDIA, _ADJUST);
 }
 
 #ifdef OLED_DRIVER_ENABLE
@@ -166,7 +167,7 @@ static void render_logo(void) {
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-      0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+      0x00, 0x00, 0x00, 0x00 , 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
       0x00, 0x80, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
@@ -250,11 +251,11 @@ static void render_status(void) {
         case _BEPO:
             oled_write_P(PSTR("BEPO\n"), false);
             break;
-        case _LOWER:
-            oled_write_P(PSTR("NumSym\n"), false);
+        case _NUM:
+            oled_write_P(PSTR("NUM\n"), false);
             break;
-        case _RAISE:
-            oled_write_P(PSTR("Media\n"), false);
+        case _MEDIA:
+            oled_write_P(PSTR("MEDIA\n"), false);
             break;
         case _ADJUST:
             oled_write_P(PSTR("Adjust\n"), false);
