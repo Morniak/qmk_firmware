@@ -63,10 +63,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_BEPO] = LAYOUT(
-      RESC,   BP_B,  BP_EA, BP_P, BP_O,  BP_EG,                                         BP_DC, BP_V, BP_D, BP_L, BP_J, BP_Z,
-      LS,     BP_A,  BP_U,  BP_I, BP_E,  BP_CO,                                         BP_C,  BP_T, BP_S, BP_R, BP_N, BP_M,
-      KC_TAB, BP_AG, BP_Y,  BP_X, BP_DT, BP_K,  KC_SPC, KC_CLCK, /**/ KC_LSFT, KC_BSPC, BP_AP, BP_Q, BP_G, BP_H, BP_F, BP_W,
-                            BR01, BR02,  BR03,  BR04,   BR05,    /**/ BR06,    BR07,    BR08,  BR09, BR10
+//    _______, _______, _______, _______, _______, _______, _______, _______, /**/ _______, _______, _______, _______, _______, _______, _______, _______,
+      RESC,    BP_B,    BP_EA,   BP_P,    BP_O,  BP_EG,                                              BP_DC,   BP_V,    BP_D,    BP_L,    BP_J,    BP_Z,
+      LS,      BP_A,    BP_U,    BP_I,    BP_E,  BP_CO,                                              BP_C,    BP_T,    BP_S,    BP_R,    BP_N,    BP_M,
+      KC_TAB,  BP_AG,   BP_Y,    BP_X,    BP_DT, BP_K,      KC_SPC,  KC_CLCK, /**/  KC_LSFT, KC_BSPC,BP_AP,   BP_Q,    BP_G,    BP_H,    BP_F,    BP_W,
+                                 BR01,    BR02,  BR03,      BR04,    BR05,    /**/  BR06,    BR07,   BR08,    BR09,    BR10
     ),
 /*
  * Lower Layer: Numbers and symbols ?
@@ -83,9 +84,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_LOWER] = LAYOUT(
-      BP_DOL , BP_DQUO, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN,                                       BP_AT, BP_PLUS, BP_MINS, BP_SLASH, BP_ASTR, BP_EQL,
-      _______, BP_1,    BP_2,    BP_3,    BP_4,    BP_5,                                          BP_6,    BP_7,     BP_8,    BP_9,    BP_0,   BP_DEGR,
-      _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______, _______, BP_PERC, BP_GRV,
+      _______, BP_DQUO, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN,                                       BP_AT,   BP_PLUS, BP_MINS, BP_SLASH, BP_ASTR, BP_EQL,
+      _______, BP_1,    BP_2,    BP_3,    BP_4,    BP_5,                                          BP_6,    BP_7,    BP_8,    BP_9,     BP_0,    BP_DEGR,
+      _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, BP_DOL,  _______,  BP_PERC, BP_GRV,
                                  _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______
     ),
 /*
@@ -96,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |        |      | Prev | Play | Next | VolUp|                              | Left | Down | Up   | Right|      |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      | Mute | VolDn|      |      |  |      |      | MLeft| Mdown| MUp  |MRight|      |        |
+ * |        |      |      |      | Mute | VolDn|      |      |  |      |      |      |      |      |      |      |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
@@ -105,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RAISE] = LAYOUT(
       _______, _______, _______, _______, _______, _______,                                       _______, _______, _______, _______, _______, _______,
       _______, _______, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLU,                                       _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
-      _______, _______, _______, _______, KC_MUTE, KC_VOLD, _______, _______,   _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______,
+      _______, _______, _______, _______, KC_MUTE, KC_VOLD, _______, _______,   _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______
     ),
 /*
