@@ -42,7 +42,7 @@ enum layers {
 #define BR01 KC_LCTL
 #define BR02 KC_LALT
 #define BR03 KC_LGUI
-#define BR04 MT(MOD_LGUI, KC_SPC)
+#define BR04 KC_SPC
 #define BR05 KC_ENT
 #define BR06 KC_BSPC
 #define BR07 MO(_MEDIA)
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |  Tab   |   À  |   Y  |   X  |   .  |   K  |  SPC |CPSLCK|  |LShift| Bspc |   ’  |   Q  |   G  |   H  |   F  |   W    |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        | CTRL | Alt  | CMD  | Space| Enter|  | Bspc | Raise| RAlt | Lower| ESC  |
- *                        |      |      |      | CMD  |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_BEPO] = LAYOUT(
