@@ -33,12 +33,16 @@ enum layers {
 #define BP_DT BP_DOT
 #define LS KC_LSFT
 #define BP_DOL BP_DOLLAR
+#define A_LEFT A(KC_LEFT)
+#define A_RGHT A(KC_RGHT)
+#define C_LEFT C(KC_LEFT)
+#define C_RGHT C(KC_RGHT)
 
 /* Bottom Row */
 #define BR01 KC_LCTL
 #define BR02 KC_LALT
 #define BR03 KC_LGUI
-#define BR04 KC_SPC
+#define BR04 MT(MOD_LGUI, KC_SPC)
 #define BR05 KC_ENT
 #define BR06 KC_BSPC
 #define BR07 MO(_MEDIA)
@@ -59,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |  Tab   |   À  |   Y  |   X  |   .  |   K  |  SPC |CPSLCK|  |LShift| Bspc |   ’  |   Q  |   G  |   H  |   F  |   W    |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        | CTRL | Alt  | CMD  | Space| Enter|  | Bspc | Raise| RAlt | Lower| ESC  |
- *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      | CMD  |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_BEPO] = LAYOUT(
@@ -98,16 +102,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |        |      | Prev | Play | Next | VolUp|                              | Left | Down | Up   | Right|      |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      | Mute | VolDn|      |      |  |      |      |      |      |      |      |      |        |
+ * |        |      |      |      | Mute | VolDn|      |      |  |      |      |      |PgDwn | PgUp |      |      |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_MEDIA] = LAYOUT(
-      _______, _______, _______, _______, _______, _______,                                       _______, _______, _______, _______, _______, _______,
-      _______, _______, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLU,                                       _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
-      _______, _______, _______, _______, KC_MUTE, KC_VOLD, _______, _______,   _______, _______, _______, _______, _______, _______, _______, _______,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      _______, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLU,                                       A_LEFT,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, A_RGHT,
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, _______, _______,   _______, _______, XXXXXXX, C_LEFT,  KC_PGDN, KC_PGUP, C_RGHT,  XXXXXXX,
                                  _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______
     ),
 /*
