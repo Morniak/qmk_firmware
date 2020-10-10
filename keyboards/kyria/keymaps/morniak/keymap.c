@@ -23,6 +23,10 @@ enum layers {
     _ADJUST
 };
 
+#define X_NP KC_NO // key is not present
+#define X_NA KC_NO // present but not available for use
+#define X_NU KC_NO // available but not used
+
 #define BP_EA BP_E_ACUTE
 #define BP_AG BP_AGRV
 #define BP_EG BP_E_GRAVE
@@ -66,14 +70,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_BEPO] = LAYOUT(
-        KC_ESC,  BP_B,    BP_EA,   BP_P,    BP_O,    BP_EG,                                         BP_DC,   BP_V,    BP_D,    BP_L,    BP_J,    BP_Z,
-        LS,      BP_A,    BP_U,    BP_I,    BP_E,    BP_CO,                                         BP_C,    BP_T,    BP_S,    BP_R,    BP_N,    BP_M,
-        KC_TAB,  BP_AG,   BP_Y,    BP_X,    BP_DT,   BP_K,    KC_SPC,  KC_CLCK,  KC_LSFT, KC_BSPC,  BP_AP,   BP_Q,    BP_G,    BP_H,    BP_F,    BP_W,
-                                   BR01,    BR02,    BR03,    BR04,    BR05,     BR06,    BR07,     BR08,    BR09,    BR10
+        KC_ESC,  BP_B,          BP_EA,          BP_P,           BP_O,           BP_EG,                   /* | */                      BP_DC,    BP_V,           BP_D,           BP_L,           BP_J,           BP_Z,
+        LS,      LGUI_T(BP_A),  LALT_T(BP_U),   LCTL_T(BP_I),   LSFT_T(BP_E),   BP_CO,                   /* | */                      BP_C,     LSFT_T(BP_T),   LCTL_T(BP_S),   LALT_T(BP_R),   LGUI_T(BP_N),   BP_M,
+        KC_TAB,  BP_AG,         ALGR_T(BP_Y),   BP_X,           BP_DT,          BP_K,   KC_SPC, KC_CLCK, /* | */ KC_LSFT,   KC_BSPC,  BP_AP,    BP_Q,           BP_G,           ALGR_T(BP_H),   BP_F,           BP_W,
+                                                               BR01,    BR02,    BR03,    BR04,    BR05, /* | */ BR06,    BR07,     BR08,    BR09,    BR10
     ),
 
 /*
- * Numbers and symbols$
+ * Numbers and symbols
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |    $   |  "   |  «   |  »   |  (   |  )   |                              |   @  |   +  |   -  |   /  |   *  |   =    |
