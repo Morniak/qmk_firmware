@@ -22,7 +22,8 @@ enum layers {
     MEDR,
     NSL,
     NSSL,
-    FUNL
+    FUNL,
+    MOUR
 };
 
 #define BP_EA BP_E_ACUTE // É
@@ -55,22 +56,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_MSTP, KC_MPLY, KC_MUTE, XXXXXXX, XXXXXXX
     ),
     [NSL] = LAYOUT(
-        XXXXXXX, BP_LBRC, BP_7,    BP_8,    BP_9,    BP_RBRC,                                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET,   XXXXXXX,
-        XXXXXXX, BP_SCLN, BP_4,    BP_5,    BP_6,    BP_EQL,                                        XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,
-        XXXXXXX, BP_GRV,  BP_1,    BP_2,    BP_3,    BP_BSLS, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX,
-                                   XXXXXXX, XXXXXXX, BP_DOT,  BP_0,    BP_MINS,  XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX, BP_LBRC, BP_7,    BP_8,    BP_9,    BP_RBRC,                                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, BP_SCLN, BP_4,    BP_5,    BP_6,    BP_EQL,                                       XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,
+        XXXXXXX, BP_GRV,  BP_1,    BP_2,    BP_3,    BP_BSLS, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX,
+                                   XXXXXXX, XXXXXXX, BP_DOT,  BP_0,    BP_MINS,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
     [NSSL] = LAYOUT(
-        XXXXXXX, BP_LCBR, BP_AMPR, BP_ASTR, BP_LPRN, BP_RCBR,                                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET,   XXXXXXX,
-        XXXXXXX, BP_COLN, BP_DLR,  BP_PERC, BP_CIRC, BP_PLUS,                                       XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,
-        XXXXXXX, BP_TILD, BP_EXLM, BP_AT,   BP_HASH, BP_PIPE, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX,
-                                   XXXXXXX, XXXXXXX, BP_LPRN, BP_RPRN, BP_UNDS,  XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX, BP_LCBR, BP_AMPR, BP_ASTR, BP_LPRN, BP_RCBR,                                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, BP_COLN, BP_DLR,  BP_PERC, BP_CIRC, BP_PLUS,                                      XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,
+        XXXXXXX, BP_TILD, BP_EXLM, BP_AT,   BP_HASH, BP_PIPE, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX,
+                                   XXXXXXX, XXXXXXX, BP_LPRN, BP_RPRN, BP_UNDS,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
     [FUNL] = LAYOUT(
-        XXXXXXX, KC_F12,  KC_F7,   KC_F8,   KC_F9,   KC_PSCR,                                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET,   XXXXXXX,
-        XXXXXXX, KC_F11,  KC_F4,   KC_F5,   KC_F6,   KC_SLCK,                                       XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,
-        XXXXXXX, KC_F10,  KC_F1,   KC_F2,   KC_F3,   KC_PAUS, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX,
-                                   XXXXXXX, XXXXXXX, KC_APP,  KC_SPC,  KC_TAB,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX, KC_F12,  KC_F7,   KC_F8,   KC_F9,   KC_PSCR,                                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, KC_F11,  KC_F4,   KC_F5,   KC_F6,   KC_SLCK,                                      XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,
+        XXXXXXX, KC_F10,  KC_F1,   KC_F2,   KC_F3,   KC_PAUS, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX,
+                                   XXXXXXX, XXXXXXX, KC_APP,  KC_SPC,  KC_TAB,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+    ),
+    [MOUR] = LAYOUT(
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                                      XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, XXXXXXX,
+        XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX,
+                                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_BTN1, KC_BTN3, KC_BTN2, XXXXXXX, XXXXXXX
     ),
 };
 
@@ -183,6 +190,9 @@ static void render_status(void) {
             break;
         case FUNL:
             oled_write_P(PSTR("Functions\n"), false);
+            break;
+        case MOUR:
+            oled_write_P(PSTR("Mouse\n"), false);
             break;
         default:
             oled_write_P(PSTR("Undefined\n"), false);
