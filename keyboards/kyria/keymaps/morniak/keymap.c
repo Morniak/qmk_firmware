@@ -38,10 +38,10 @@ enum layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT(
-        KC_ESC,  BP_B,          BP_EA,          BP_P,           BP_O,           BP_EG,                                            /* | */                               BP_DC,  BP_V,               BP_D,           BP_L,           BP_J,           BP_Z,
-        LS,      LGUI_T(BP_A),  LALT_T(BP_U),   LCTL_T(BP_I),   LSFT_T(BP_E),   BP_CO,                                            /* | */                               BP_C,   LSFT_T(BP_T),       LCTL_T(BP_S),   LALT_T(BP_R),   LGUI_T(BP_N),   BP_M,
-        KC_TAB,  BP_AG,         ALGR_T(BP_Y),   BP_X,           BP_DT,          BP_K,               XXXXXXX,            KC_CLCK , /* | */ XXXXXXX,           XXXXXXX,   BP_AP,  BP_Q,               BP_G,           ALGR_T(BP_H),   BP_F,           BP_W,
-                                                XXXXXXX,        XXXXXXX,        LT(MEDR, KC_ESC),   LT(NAVR, KC_SPC),   KC_TAB,   /* | */ LT(NSSL, KC_ENT),  LT(NSL, KC_BSPC),  LT(FUNL, KC_DEL),   XXXXXXX,        XXXXXXX
+        KC_ESC,  BP_B,          BP_EA,          BP_P,           BP_O,           BP_EG,                                                      /* | */                               BP_DC,  BP_V,               BP_D,           BP_L,           BP_J,           BP_Z,
+        LS,      LGUI_T(BP_A),  LALT_T(BP_U),   LCTL_T(BP_I),   LSFT_T(BP_E),   BP_CO,                                                      /* | */                               BP_C,   LSFT_T(BP_T),       LCTL_T(BP_S),   LALT_T(BP_R),   LGUI_T(BP_N),   BP_M,
+        KC_TAB,  BP_AG,         ALGR_T(BP_Y),   BP_X,           BP_DT,          BP_K,               XXXXXXX,            KC_CLCK ,           /* | */ XXXXXXX,           XXXXXXX,   BP_AP,  BP_Q,               BP_G,           ALGR_T(BP_H),   BP_F,           BP_W,
+                                                XXXXXXX,        XXXXXXX,        LT(MEDR, KC_ESC),   LT(NAVR, KC_SPC),   LT(MOUR, KC_TAB),   /* | */ LT(NSSL, KC_ENT),  LT(NSL, KC_BSPC),  LT(FUNL, KC_DEL),   XXXXXXX,        XXXXXXX
     ),
     [NAVR] = LAYOUT(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                      KC_AGIN, KC_UNDO, KC_CUT,  KC_COPY, KC_PSTE, XXXXXXX,
